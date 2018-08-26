@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Paper from 'material-ui/Paper';
 import Grid from 'material-ui/Grid';
 import { MuiThemeProvider } from 'material-ui/styles';
