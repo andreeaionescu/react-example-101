@@ -9,13 +9,20 @@ module.exports = {
           use: {
             loader: "babel-loader"
           }
-        }
+        },
+        { 
+          test: /\.html$/i, 
+          exclude: /node_modules/,
+          use: {
+            loader: 'html-loader' 
+          }
+        },
       ]
     },
     plugins: [
-        new HtmlWebPackPlugin({
-            template: "./src/index.html",
-            filename: "./index.html"
-          })
+      new HtmlWebPackPlugin({
+        template: "./index.html",
+        filename: "./index.html"
+      })
     ]
   };
