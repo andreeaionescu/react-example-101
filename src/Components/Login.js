@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Form, Header} from "semantic-ui-react"
+import {Input, Button, Form, Header} from "semantic-ui-react"
 import {Auth} from 'aws-amplify'
 import { runInThisContext } from 'vm'
 
@@ -24,12 +24,12 @@ export default class Login extends React.Component {
         console.log('Password: ', this.state.password)
     }
 
-    setUsername(username){
-        this.setState({username: username})
+    setUsername(e){
+        this.setState({username: e.target.value})
     }
 
-    setPassword(password){
-        this.setState({password: password})
+    setPassword(e){
+        this.setState({password: e.target.value})
     }
 
     render(){
