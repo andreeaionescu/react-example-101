@@ -22,6 +22,8 @@ export default class Login extends React.Component {
         console.log('Submitted!')
         console.log('Username: ', this.state.username)
         console.log('Password: ', this.state.password)
+        this.setState({username: '', password: ''})
+        e.target.reset()
     }
 
     setUsername(e){
