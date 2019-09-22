@@ -1,23 +1,48 @@
 import React from 'react'
 import {Button, Form, Header} from "semantic-ui-react"
+import {Auth} from 'aws-amplify'
+import { runInThisContext } from 'vm'
 
 export default class Login extends React.Component {
 
-    onSubmit(){
-        
+    constructor(props){
+        super(props)
+        this.state = {
+            username: '',
+            password: ''
+        }
+
+        this.handleOnSubmit = this.handleOnSubmit.bind(this)
+        this.setUsername = this.setUsername.bind(this)
+        this.setPassword = this.setPassword.bind(this)
+    }
+
+    handleOnSubmit(e){
+        e.preventDefault()
+        console.log('Submitted!')
+        console.log('Username: ', this.state.username)
+        console.log('Password: ', this.state.password)
+    }
+
+    setUsername(username){
+        this.setState({username: username})
+    }
+
+    setPassword(password){
+        this.setState({password: password})
     }
 
     render(){
         return(
-            <Form>
+            <Form onSubmit={this.handleOnSubmit}>
                 <Header size="huge">Login to continue</Header>
                 <Form.Field>
                     <label>Username</label>
-                    <input placeholder='Type your username here..'/>
+                    <Input type='text' placeholder='Type your username here..' onChange={this.setUsername}/>
                 </Form.Field>
                 <Form.Field>
                     <label>Password</label>
-                    <input placeholder='Type your password here..'/>
+                    <Input type='password' placeholder='Type your password here..' onChange={this.setPassword}/>
                 </Form.Field>
                 <Button type='submit'>Submit</Button>
             </Form>
