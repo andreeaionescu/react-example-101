@@ -1,5 +1,6 @@
 import React from 'react';
 import Welcome from './Components/Welcome'
+import { withAuthenticator } from 'aws-amplify-react'
 
 class App extends React.Component {
 
@@ -12,4 +13,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withAuthenticator(App, {includeGreetings: true});
