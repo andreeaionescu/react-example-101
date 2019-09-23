@@ -1,7 +1,6 @@
 import React from 'react'
 import {Input, Button, Form, Header} from "semantic-ui-react"
 import {Auth} from 'aws-amplify'
-import { runInThisContext } from 'vm'
 
 export default class Login extends React.Component {
 
@@ -38,14 +37,26 @@ export default class Login extends React.Component {
         return(
             <Form onSubmit={this.handleOnSubmit}>
                 <Header size="huge">Login to continue</Header>
-                <Form.Field>
-                    <label>Username</label>
-                    <Input type='text' placeholder='Type your username here..' onChange={this.setUsername}/>
-                </Form.Field>
-                <Form.Field>
-                    <label>Password</label>
-                    <Input type='password' placeholder='Type your password here..' onChange={this.setPassword}/>
-                </Form.Field>
+                <Form.Group>
+                    <Form.Field
+                        control={Input}
+                        label='Username'
+                        type='text'
+                        placeholder='Type your username here..'
+                        width={12}
+                        onChange={this.setUsername}
+                    />
+                </Form.Group>
+                <Form.Group>
+                    <Form.Field
+                        control={Input}
+                        label='Password'
+                        type='password'
+                        placeholder='Type your password here..'
+                        width={12}
+                        onChange={this.setPassword}
+                    />
+                </Form.Group>
                 <Button type='submit'>Submit</Button>
             </Form>
         )

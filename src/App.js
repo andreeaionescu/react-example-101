@@ -1,16 +1,15 @@
 import React from 'react';
 import Welcome from './Components/Welcome'
-import { withAuthenticator } from 'aws-amplify-react'
 
 class App extends React.Component {
 
   render() {
     return (
-      <div style={{flexGrow:1}}>
+      <div style={{flexGrow:1, height:'100%'}}>
           <Welcome/>
       </div>
     );
   }
 }
 
-export default withAuthenticator(App, {includeGreetings: true});
+export default App;

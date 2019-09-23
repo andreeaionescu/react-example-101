@@ -7,11 +7,11 @@ export default class Welcome extends React.Component {
 
     render(){
         return (
-            <Grid stretched columns={2}>
+            <Grid centered verticalAlign='middle' columns={2} style={{height:'100%'}}>
                 <Grid.Column>    
-                    <Image src='src/Images/background-flowers.jpg' />
+                    <Image centered size='large' src='src/Images/code_girls.png' />
                 </Grid.Column>
-                <Grid.Column verticalAlign="middle">
+                <Grid.Column>
                     <Login/>
                 </Grid.Column>
             </Grid>
